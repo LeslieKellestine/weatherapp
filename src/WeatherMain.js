@@ -1,5 +1,6 @@
 import React from "react";
 import "./Weather.css";
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Weather() {
     let weatherData = {
@@ -12,7 +13,7 @@ export default function Weather() {
       humidity: 88,
       wind: 5
     };
-    
+
     return (
       <div className="Weather">
         <div className="row">
