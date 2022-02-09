@@ -5,7 +5,13 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Weather city="Ottawa" />
+      <div className= "Weather-whole">
+      <Weather defaultcity="Ottawa" />
+      </div>
+      <footer>
+        This project was created by Leslie Kellestine and is
+      <a href="https://github.com/LeslieKellestine/weatherapp" target="_blank"> open-sourced on GitHub </a>
+    </footer>
     </div>
   );
 }

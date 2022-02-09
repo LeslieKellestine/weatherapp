@@ -1,4 +1,8 @@
 .App {
+  text-align: left;
+  color: grey
+}
+.Weather-whole {
   border: 4px solid #ff3366;
   padding: 20px;
   margin: 18px;

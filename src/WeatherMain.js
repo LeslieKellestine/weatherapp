@@ -12,6 +12,7 @@ export default function Weather() {
       humidity: 88,
       wind: 5
     };
+    
     return (
       <div className="Weather">
         <div className="row">
@@ -31,6 +32,7 @@ export default function Weather() {
               Search
             </button>
           </div>
+
         </div>
         <img src={weatherData.imgUrl} alt="" className="sunheader" />
         <h1> {weatherData.city} </h1>
