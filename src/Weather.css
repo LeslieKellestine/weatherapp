@@ -1,15 +1,24 @@
-.form-control {
+.Weather form {
     background: transparent;
     border: 2px solid #ff3366;
     color: #ff3366;
     cursor: pointer;
+    margin: auto;
   }
-  
+.Weather button {
+    background: transparent;
+    border: 2px solid #ff3366;
+    color: #ff3366;
+    cursor: pointer;
+    margin: auto;
+}
   .sunheader {
     float: left;
-    width: 250px;
+    width: 190px;
     display: block;
+    padding-top: 20px;
   }
+
   ul {
     color: #ff3366;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -33,23 +42,23 @@
   h1 {
     font-size: 50px;
     line-height: 90px;
-    margin: 0;
+    padding-top: 20px;
   }
   h2 {
     font-size: 50px;
     line-height: 30px;
     margin: 0;
   }
-  .units {
-    font-size: 25px;
+  .Weather .units {
+    font-size: 17px;
     position: relative;
     margin: none;
-    top: -18px;
-    left: -7px;
+    top: -10px;
+    left: -3px;
     text-decoration: none;
     color: #ff3366;
   }
-  .highLow {
+  .Weather .highLow {
     text-align: right;
     font-size: 17px;
   }

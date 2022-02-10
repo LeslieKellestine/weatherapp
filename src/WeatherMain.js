@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import "./Weather.css";
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -21,10 +22,10 @@ export default function Weather() {
             <form>
               <input
                 type="text"
-                placeholder="Select a City"
+                placeholder="Search a City"
                 autoComplete="off"
                 autoFocus="on"
-                className="form-control"
+                className="form-control inputCity"
               />
             </form>
           </div>
@@ -33,13 +34,12 @@ export default function Weather() {
               Search
             </button>
           </div>
-
         </div>
         <img src={weatherData.imgUrl} alt="" className="sunheader" />
         <h1> {weatherData.city} </h1>
         <h2>
           <span className="temperature"> {weatherData.temperature}</span>
-          <span className="units"> {weatherData.unit} </span>
+          <span className="units"> {weatherData.unit}</span>
         </h2>
         <ul>
           <li>
