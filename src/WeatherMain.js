@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate.js";
 import "./Weather.css";
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -17,6 +18,7 @@ export default function Weather(props) {
             icon: response.data.weather[0].icon,
             wind: response.data.wind.speed,
             city: response.data.name,
+            date: new Date(response.data.dt * 1000),
             high: response.data.main.temp_max,
             low:  response.data.main.temp_min,
           });
@@ -78,6 +80,8 @@ if (weatherData.ready) {
           </li>
         </ul>
         <p className="highLow">
+        <span> <FormattedDate date={weatherData.date} /></span>
+         <br />
           <span>{Math.round(weatherData.high)}°</span> | <span> {Math.round(weatherData.low)}°</span>
         </p>
       </div>
