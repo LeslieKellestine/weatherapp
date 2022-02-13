@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate.js";
+import WeatherInfo from "./Weatherinfo.js";
 import "./Weather.css";
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -9,7 +9,6 @@ export default function Weather(props) {
         const [city, setCity] = useState(props.defaultCity);
       
         function handleResponse(response) {
-            console.log(response.data);
           setWeatherData({
             ready: true,
             temperature: response.data.main.temp,
@@ -26,7 +25,7 @@ export default function Weather(props) {
 
         function handleSubmit(event) {
             event.preventDefault();
-            search();
+            search(city);
           }
         
           function handleCityChange(event) {
@@ -35,7 +34,7 @@ export default function Weather(props) {
 
           function search() {
             const apiKey = "05d9d7923ffdfb53fdfae4f1f915dae5";
-            let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+            let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
             axios.get(apiUrl).then(handleResponse);
           }
 
@@ -44,50 +43,28 @@ if (weatherData.ready) {
       <div className="Weather">
         <div className="row">
           <div className="col-6">
-            <form>
+            <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Search a City"
                 autoComplete="off"
                 autoFocus="on"
                 className="form-control inputCity"
+                onChange={handleCityChange}
               />
             </form>
-          </div>
-          <div className="col-3">
+            </div>
+            <div className="col-3">
             <button className="search-city form-control btn btn-primary shadow-sm w-100">
               Search
             </button>
           </div>
-        </div>
-        <img src={weatherData.icon} alt={weatherData.description} className="sunheader" />
-        <h1> {weatherData.city} </h1>
-        <h2>
-          <span className="temperature"> {Math.round(weatherData.temperature)}</span>
-          <span className="units"> {weatherData.unit}</span>
-        </h2>
-        <ul>
-          <li className="text-capitalize">
-            <strong> {weatherData.description}</strong>
-          </li>
-          <li>
-            Humidity:
-            <strong> {weatherData.humidity}</strong>%
-          </li>
-          <li>
-            Wind:
-            <strong> {Math.round(weatherData.wind)}</strong>km/h
-          </li>
-        </ul>
-        <p className="highLow">
-        <span> <FormattedDate date={weatherData.date} /></span>
-         <br />
-          <span>{Math.round(weatherData.high)}°</span> | <span> {Math.round(weatherData.low)}°</span>
-        </p>
-      </div>
-    );
-  } else {
+          </div>
+            <WeatherInfo data={weatherData}/>
+          </div>
+          );
+} else {
     search();
     return "Loading...";
   }
-} 
+}
