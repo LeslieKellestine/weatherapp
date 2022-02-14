@@ -6,14 +6,15 @@ export default function WeatherInfo (props) {
 
 return (
     <div className="WeatherInfo">
+        <div className="row mt-6">
         <WeatherIcon
             code= {props.data.icon}
             alt={props.data.description}
             className="sunheader" />
         <h1> {props.data.city} </h1>
         <h2>
-          <span className="temperature"> {Math.round(props.data.temperature)}</span>
-          <span className="units"> {props.data.unit}</span>
+        <span className="temperature">{Math.round(props.data.temperature)}</span>
+         <span className="unit">°C</span>
         </h2>
         <ul>
           <li className="text-capitalize">
@@ -28,6 +29,7 @@ return (
             <strong> {Math.round(props.data.wind)}</strong>km/h
           </li>
         </ul>
+        </div>
         <p className="highLow">
         <span> <FormattedDate date={props.data.date} /></span>
          <br />
