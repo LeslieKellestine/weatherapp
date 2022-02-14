@@ -12,7 +12,7 @@
     cursor: pointer;
     margin: auto;
 }
-  .sunheader {
+  .sunheader canvas {
     float: left;
     width: 190px;
     display: block;
