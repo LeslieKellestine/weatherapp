@@ -12,7 +12,7 @@ function App() {
       </div>
       <footer>
         This project was created by Leslie Kellestine and is
-      <a href="https://github.com/LeslieKellestine/weatherapp" target="_blank"> open-sourced on GitHub </a>
+      <a href="https://github.com/LeslieKellestine/weatherapp" target="_blank" rel="noreferrer"> open-sourced on GitHub </a>
     </footer>
     </div>
     </div>
