@@ -10,6 +10,7 @@ return (
         <div className="col-6">
         <WeatherIcon
             code= {props.data.icon}
+            size={240}
             alt={props.data.description}
             className="sunheader" />
             </div>
