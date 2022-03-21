@@ -33,10 +33,10 @@ return (
         </ul>
         </div>
         </div>
-        <p className="highLow">
+        <div className="highLow">
         <span> <FormattedDate date={props.data.date} /></span>
           <span>{Math.round(props.data.high)}°</span> | <span> {Math.round(props.data.low)}°</span>
-        </p>
+        </div>
       </div>
     );
 }
