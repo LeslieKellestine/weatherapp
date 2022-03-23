@@ -1,4 +1,4 @@
-.Weather form {
+.Weather .inputCity {
     background: transparent;
     border: 2px solid #ff3366;
     color: #ff3366;
@@ -8,14 +8,14 @@
     margin-bottom: 20px;
   }
 
-.Weather button {
+.Weather .search-city {
     background: transparent;
     border: 2px solid #ff3366;
     color: #ff3366;
     cursor: pointer;
     margin: auto;
 }
-.Weather button:hover {
+.Weather .search-city:hover {
   background: #ff3366;
   color: white;
   border: 2px solid #ff3366;
